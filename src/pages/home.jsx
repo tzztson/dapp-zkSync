@@ -47,7 +47,7 @@ const Home = () => {
                   <input
                     type="text"
                     placeholder="0"
-                    className=" w-full outline-none bg-transparent rounded-xl pl-6 pr-20  bg-[#131325] max-sm:py-2"
+                    className=" w-full outline-none  rounded-xl pl-6 pr-20  bg-[#131325] max-sm:py-2"
                   />
                   <p className="absolute pl-2 border-l border-[#A4A4A9] right-4 top-1/2 -translate-y-1/2 text-base">
                     Max
@@ -74,7 +74,7 @@ const Home = () => {
                   <input
                     type="text"
                     placeholder="0"
-                    className=" w-full outline-none bg-transparent rounded-xl px-6  bg-[#131325] max-sm:py-2"
+                    className=" w-full outline-none rounded-xl px-6  bg-[#131325] max-sm:py-2"
                   />
                 </div>
               </div>
