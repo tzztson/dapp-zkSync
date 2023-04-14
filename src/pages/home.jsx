@@ -32,47 +32,53 @@ const Home = () => {
             </div>
           </div>
           <div className="flex flex-col gap-4">
-            <div className="flex gap-12 max-sm:flex-col max-sm:gap-4">
-              <div className="flex gap-4 flex-[1_1_20%]">
-                <img src={ethereum} className="w-12 h-12" alt="" />
-                <div>
-                  <p className="text-[#A4A4A9]">From</p>
-                  <select className="bg-transparent font-bold text-xl outline-none">
-                    <option>ETH</option>
-                  </select>
+            <div className="flex flex-col gap-1">
+              <div className="flex gap-12 max-sm:flex-col max-sm:gap-4">
+                <div className="flex gap-4 flex-[1_1_20%]">
+                  <img src={ethereum} className="w-12 h-12" alt="" />
+                  <div>
+                    <p className="text-[#A4A4A9]">From</p>
+                    <select className="bg-transparent font-bold text-xl outline-none">
+                      <option>ETH</option>
+                    </select>
+                  </div>
+                </div>
+                <div className="flex w-full relative text-2xl flex-[1_1_80%]">
+                  <input
+                    type="text"
+                    placeholder="0"
+                    className=" w-full outline-none bg-transparent rounded-xl pl-6 pr-20  bg-[#131325] max-sm:py-2"
+                  />
+                  <p className="absolute pl-2 border-l border-[#A4A4A9] right-4 top-1/2 -translate-y-1/2 text-base">
+                    Max
+                  </p>
                 </div>
               </div>
-              <div className="flex w-full relative text-2xl flex-[1_1_80%]">
-                <input
-                  type="text"
-                  placeholder="0"
-                  className=" w-full outline-none bg-transparent rounded-xl pl-6 pr-20  bg-[#131325] max-sm:py-2"
-                />
-                <p className="absolute pl-2 border-l border-[#A4A4A9] right-4 top-1/2 -translate-y-1/2 text-base">
-                  Max
-                </p>
-              </div>
+              <p className="text-right text-[#A4A4A9] pr-6">Balance: 12 ETH</p>
             </div>
             <div className="px-2 max-sm:flex items-center justify-center">
               <img src={swap} className="w-8 h-8" alt="" />
             </div>
-            <div className="flex  gap-12 max-sm:flex-col max-sm:gap-4">
-              <div className="flex gap-4 flex-[1_1_20%]">
-                <img src={usdt} className="w-12 h-12" alt="" />
-                <div>
-                  <p className="text-[#A4A4A9]">To</p>
-                  <select className="bg-transparent font-bold text-xl outline-none">
-                    <option>USDT</option>
-                  </select>
+            <div className="flex flex-col gap-1">
+              <div className="flex  gap-12 max-sm:flex-col max-sm:gap-4">
+                <div className="flex gap-4 flex-[1_1_20%]">
+                  <img src={usdt} className="w-12 h-12" alt="" />
+                  <div>
+                    <p className="text-[#A4A4A9]">To</p>
+                    <select className="bg-transparent font-bold text-xl outline-none">
+                      <option>USDT</option>
+                    </select>
+                  </div>
+                </div>
+                <div className="flex w-full relative text-2xl flex-[1_1_80%]">
+                  <input
+                    type="text"
+                    placeholder="0"
+                    className=" w-full outline-none bg-transparent rounded-xl px-6  bg-[#131325] max-sm:py-2"
+                  />
                 </div>
               </div>
-              <div className="flex w-full relative text-2xl flex-[1_1_80%]">
-                <input
-                  type="text"
-                  placeholder="0"
-                  className=" w-full outline-none bg-transparent rounded-xl px-6  bg-[#131325] max-sm:py-2"
-                />
-              </div>
+              <p className="text-right text-[#A4A4A9] pr-6">Balance: 2334 USDT</p>
             </div>
           </div>
           <div className="py-6">
