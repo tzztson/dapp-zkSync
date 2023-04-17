@@ -10,7 +10,16 @@ import ethereum from "../assets/img/svg/ethereum.svg";
 import usdt from "../assets/img/svg/eth-usdt.svg";
 import swap from "../assets/img/svg/swap.svg";
 
-
-
-
-export { logo, dots, conversion, twitter, telegram, discord, reload, setting, ethereum, usdt, swap };
+export {
+  logo,
+  dots,
+  conversion,
+  twitter,
+  telegram,
+  discord,
+  reload,
+  setting,
+  ethereum,
+  usdt,
+  swap,
+};

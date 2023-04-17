@@ -7,7 +7,17 @@ import {
   usdt,
 } from "../consts/constants";
 
+import { useContext, useState, useEffect } from "react";
+import { WalletConnectContext } from "../context/walletConnectProvider";
+
 const Home = () => {
+  const { isConnected } = new useContext(WalletConnectContext);
+  const [readySwap, setReadySwap] = useState("Not connected");
+
+  useEffect(() => {
+    setReadySwap(isConnected ? "Swap" : "Not connected");
+  }, [isConnected]);
+
   return (
     <div className="container mx-auto px-12 max-sm:px-6 py-12 w-full">
       <div className="flex justify-between max-sm:flex-col gap-4">
@@ -43,7 +53,7 @@ const Home = () => {
                     </select>
                   </div>
                 </div>
-                <div className="flex w-full relative text-2xl flex-[1_1_80%]">
+                <div className="flex w-full text-2xl flex-[1_1_80%] relative">
                   <input
                     type="text"
                     placeholder="0"
@@ -70,7 +80,7 @@ const Home = () => {
                     </select>
                   </div>
                 </div>
-                <div className="flex w-full relative text-2xl flex-[1_1_80%]">
+                <div className="flex w-full  text-2xl flex-[1_1_80%]">
                   <input
                     type="text"
                     placeholder="0"
@@ -78,12 +88,14 @@ const Home = () => {
                   />
                 </div>
               </div>
-              <p className="text-right text-[#A4A4A9] pr-6">Balance: 2334 USDT</p>
+              <p className="text-right text-[#A4A4A9] pr-6">
+                Balance: 2334 USDT
+              </p>
             </div>
           </div>
           <div className="py-6">
             <button className="w-full bg-[#DAA70C] text-xl py-2 px-6 rounded-lg font-bold max-[320px]:px-3">
-              Connected
+              {readySwap}
             </button>
           </div>
         </div>
