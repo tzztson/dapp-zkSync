@@ -1,3 +1,9 @@
+import { createClient, WagmiConfig } from "wagmi";
+import { connectors, provider } from "./components/wagmi";
+import { WalletConnectProvider } from "./context/walletConnectProvider";
+import SimpleBar from 'simplebar-react';
+import 'simplebar-react/dist/simplebar.min.css';
+
 import "./App.css";
 import {
   BrowserRouter as Router,
@@ -12,18 +18,29 @@ import LayoutHeader from "./components/layout/layoutHeader";
 import LayoutFooter from "./components/layout/layoutFooter";
 
 function App() {
+  const client = createClient({
+    autoConnect: true,
+    connectors: connectors,
+    provider,
+  });
   return (
-    <div className="">
-      <header className=""></header>
-      <Router>
-        <LayoutHeader />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <LayoutFooter />
-      </Router>
-    </div>
+    <SimpleBar className="h-[100vh]">
+    <WagmiConfig client={client}>
+      <WalletConnectProvider>
+        <div className="">
+          <header className=""></header>
+          <Router>
+            <LayoutHeader />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+            <LayoutFooter />
+          </Router>
+        </div>
+      </WalletConnectProvider>
+    </WagmiConfig>
+    </SimpleBar>
   );
 }
 
