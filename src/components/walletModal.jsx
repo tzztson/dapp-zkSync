@@ -27,11 +27,11 @@ const WalletModal = (props) => {
           onClick={handleOutsideClick}
         >
           <div
-            className=" max-sm:w-[90%] fixed bg-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-xl shadow-xl"
+            className=" max-sm:w-[90%] fixed bg-[#07071C] border border-blue-900 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-xl shadow-xl"
             ref={modalRef}
           >
             <span
-              className="text-black text-4xl font-bold float-right px-2"
+              className="text-[#a4a4a9] text-4xl font-bold float-right px-2"
               onClick={props.closeModal}
             >
               &times;
@@ -42,7 +42,7 @@ const WalletModal = (props) => {
                   <button
                     key={index}
                     onClick={() => connect({ connector })}
-                    className="bg-white shadow-xl border rounded-lg my-3 cursor-pointer border-gray-300 w-full text-black px-6 py-2 hover:bg-gray-200 flex gap-8  items-center"
+                    className="bg-[#131325] text-white shadow-xl border rounded-lg my-3 cursor-pointer border-blue-300 w-full text-black px-6 py-2 hover:bg-blue-400 flex gap-8  items-center"
                   >
                     <img
                       src={require(`../assets/img/svg/${index + 1}.svg`)}
