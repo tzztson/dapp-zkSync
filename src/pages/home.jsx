@@ -9,10 +9,21 @@ import {
 
 import { useContext, useState, useEffect } from "react";
 import { WalletConnectContext } from "../context/walletConnectProvider";
+import ModalContainer from "../components/modalContainer";
+import SettingContents from "../components/modalContents/settingContent";
 
 const Home = () => {
   const { isConnected } = new useContext(WalletConnectContext);
   const [readySwap, setReadySwap] = useState("Not connected");
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+
+  const showSettingModal = () => {
+    setIsSettingsOpen(true);
+  };
+
+  const closeSettingModal = () => {
+    setIsSettingsOpen(false);
+  };
 
   useEffect(() => {
     setReadySwap(isConnected ? "Swap" : "Not connected");
@@ -38,7 +49,14 @@ const Home = () => {
             <p className="text-[#A4A4A9] text-2xl">Swap</p>
             <div className="flex gap-4">
               <img src={reload} className="w-6 h-6" alt="" />
-              <img src={setting} className="w-6 h-6" alt="" />
+              <img
+                src={setting}
+                className="w-6 h-6"
+                onClick={() => {
+                  showSettingModal();
+                }}
+                alt=""
+              />
             </div>
           </div>
           <div className="flex flex-col gap-4">
@@ -100,6 +118,9 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <ModalContainer openModal={isSettingsOpen} title="Setting" closeModal={closeSettingModal}>
+        <SettingContents />
+      </ModalContainer>
     </div>
   );
 };
